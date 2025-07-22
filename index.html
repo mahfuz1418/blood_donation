@@ -1,77 +1,290 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blood Donation - Home</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>জীবনরেখা - হোম</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .navbar-nav .nav-link.active {
+      font-weight: bold;
+      border-bottom: 3px solid white;
+    }
+    .carousel-caption {
+      background-color: rgba(0,0,0,0.5);
+      padding: 15px;
+      border-radius: 10px;
+    }
+    .info-box {
+      background: #f8d7da;
+      padding: 30px 20px;
+      border-radius: 15px;
+      box-shadow: 0 6px 12px rgba(220,53,69,.3);
+      margin-bottom: 30px;
+      transition: transform 0.3s ease;
+      
+    }
+    .info-box:hover {
+      transform: scale(1.05);
+    }
+    .section-title {
+      font-weight: 700;
+      color: #dc3545;
+      margin-bottom: 30px;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .stats {
+      background: #dc3545;
+      color: white;
+      border-radius: 15px;
+      padding: 25px 15px;
+      text-align: center;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+      margin-bottom: 25px;
+      transition: background-color 0.3s ease;
+    }
+    .stats:hover {
+      background-color: #b02a37;
+    }
+    .card-img-top{
+      height: 200px;
+      background-size: cover;
+    }
+    footer {
+      background: #212529;
+      color: white;
+      padding: 25px 0;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">BloodConnect</a>
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="register.html">Become a Donor</a></li>
-          <li class="nav-item"><a class="nav-link" href="request.html">Request Blood</a></li>
-          <li class="nav-item"><a class="nav-link" href="donors.html">Find Donors</a></li>
-        </ul>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">জীবনরেখা</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" href="index.html">হোম</a></li>
+        <li class="nav-item"><a class="nav-link" href="register.html">রক্তদাতা হন</a></li>
+        <li class="nav-item"><a class="nav-link" href="request.html">রক্তের প্রয়োজন</a></li>
+        <li class="nav-item"><a class="nav-link" href="donors.html">দাতা খুঁজুন</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Carousel -->
+<div id="heroSlider" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active" style="height: 450px;">
+      <img src="asset/hero3.jpg" class="d-block w-100" alt="রক্তদান">
+      <div class="carousel-caption d-none d-md-block">
+        <h1 class="display-5">রক্ত দিন, জীবন বাঁচান</h1>
+        <p>আপনার রক্ত কারো জন্য হতে পারে নতুন জীবনের সূচনা।</p>
       </div>
     </div>
-  </nav>
-
-  <!-- Hero -->
-  <header class="bg-light text-center py-5">
-    <div class="container">
-      <h1 class="display-5">Donate Blood, Save Lives</h1>
-      <p class="lead">Your blood can be someone’s second chance at life.</p>
-    </div>
-  </header>
-
-  <!-- Why Donate Blood -->
-  <section class="py-5 bg-white">
-    <div class="container">
-      <h2 class="text-center mb-4">Why Donate Blood?</h2>
-      <div class="row">
-        <div class="col-md-4"><h5>🩸 Save Lives</h5><p>Every 2 seconds, someone needs blood.</p></div>
-        <div class="col-md-4"><h5>💪 Health Benefits</h5><p>Donation stimulates blood cell production.</p></div>
-        <div class="col-md-4"><h5>🤝 Help Community</h5><p>Blood supply helps in disasters and emergencies.</p></div>
+    <div class="carousel-item" style="height: 450px;">
+      <img src="asset/hero2.jpg" class="d-block w-100" alt="স্বেচ্ছাসেবা">
+      <div class="carousel-caption d-none d-md-block">
+        <h1 class="display-5">একটি মহৎ কাজ</h1>
+        <p>আপনার একটি সিদ্ধান্ত বাঁচাতে পারে তিনটি প্রাণ।</p>
       </div>
     </div>
-  </section>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#heroSlider" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#heroSlider" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
 
-  <!-- FAQ -->
-  <section class="py-5 bg-light">
-    <div class="container">
-      <h2 class="text-center mb-4">FAQs</h2>
-      <div class="accordion" id="faqAccordion">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="q1">
-            <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#a1" aria-expanded="true">Who can donate?</button>
-          </h2>
-          <div id="a1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">Healthy individuals aged 18+, 50kg+, and not sick.</div>
+<!-- Why Donate Section -->
+<section class="py-5 bg-white">
+  <div class="container">
+    <h2 class="section-title">রক্ত দানের গুরুত্ব</h2>
+    <div class="row text-center d-flex justify-content-between">
+      <div class="col-md-4 info-box" style="width: 31%;">
+        <h4>🩸 জীবন বাঁচান</h4>
+        <p>প্রতি ২ সেকেন্ডে বিশ্বের কোথাও একজনের রক্তের প্রয়োজন হয়। আপনার রক্ত কারো জীবন বাঁচাতে পারে।</p>
+      </div>
+      <div class="col-md-4 info-box" style="width: 31%;">
+        <h4>💪 স্বাস্থ্য উপকারিতা</h4>
+        <p>রক্তদান আপনার শরীর থেকে পুরনো রক্ত সরিয়ে নতুন রক্তকণিকার সৃষ্টিতে সাহায্য করে এবং স্বাস্থ্য ভালো রাখে।</p>
+      </div>
+      <div class="col-md-4 info-box" style="width: 31%;">
+        <h4>🤝 সমাজের উপকার</h4>
+        <p>দুর্যোগ, দুর্ঘটনা এবং জরুরী অবস্থায় রক্ত সঞ্চয় সমাজকে সাহায্য করে এবং প্রাণ রক্ষা করে।</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Our Activities Section -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="section-title">আমাদের কার্যক্রম</h2>
+    <div class="row text-center">
+      <div class="col-md-3 mb-4">
+        <i class="fa-solid fa-hand-holding-heart fa-3x text-danger mb-3"></i>
+        <h5>রক্ত সংগ্রহ</h5>
+        <p>নিরাপদ ও জীবাণুমুক্ত পদ্ধতিতে রক্ত সংগ্রহ করি।</p>
+      </div>
+      <div class="col-md-3 mb-4">
+        <i class="fa-solid fa-people-group fa-3x text-danger mb-3"></i>
+        <h5>দাতাদের সংযোগ</h5>
+        <p>রক্তদাতা ও প্রয়োজনকারীদের সহজে সংযোগ করাই আমাদের লক্ষ্য।</p>
+      </div>
+      <div class="col-md-3 mb-4">
+        <i class="fa-solid fa-truck-medical fa-3x text-danger mb-3"></i>
+        <h5>রক্ত সরবরাহ</h5>
+        <p>জরুরী পরিস্থিতিতে দ্রুত রক্ত পৌঁছে দিই।</p>
+      </div>
+      <div class="col-md-3 mb-4">
+        <i class="fa-solid fa-heart-pulse fa-3x text-danger mb-3"></i>
+        <h5>স্বাস্থ্য সচেতনতা</h5>
+        <p>রক্তদানের স্বাস্থ্য উপকারিতা নিয়ে সচেতনতা বৃদ্ধিতে কাজ করি।</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<section class="py-5 bg-white">
+  <div class="container">
+    <h2 class="section-title">আমাদের অবদান</h2>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="stats">
+          <h3>১০,৫০০+</h3>
+          <p>রক্তদাতা</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="stats">
+          <h3>৮,০০০+</h3>
+          <p>রক্তের অনুরোধ</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="stats">
+          <h3>৭,৫০০+</h3>
+          <p>জীবন বাঁচানো হয়েছে</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="stats">
+          <h3>১৫</h3>
+          <p>শহরে কার্যক্রম</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Latest News Section -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="section-title">সাম্প্রতিক খবর / আপডেটস</h2>
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <div class="card shadow-sm">
+          <img src="asset/news1.jpg" class="card-img-top" alt="সংবাদ ১">
+          <div class="card-body">
+            <h5 class="card-title">জাতীয় রক্তদান দিবস উদযাপন</h5>
+            <p class="card-text">আমরা সফলভাবে জাতীয় রক্তদান দিবস উদযাপন করেছি, যেখানে ৫০০ জন নতুন রক্তদাতা যুক্ত হয়েছেন।</p>
+            <a href="#" class="btn btn-danger btn-sm">আরো পড়ুন</a>
           </div>
         </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="q2">
-            <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#a2">Is it safe?</button>
-          </h2>
-          <div id="a2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">Yes. Sterile equipment is used every time.</div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="card shadow-sm">
+          <img src="asset/news2.jpg" class="card-img-top" alt="সংবাদ ২" >
+          <div class="card-body">
+            <h5 class="card-title">নতুন রক্তদাতা নিবন্ধন শিবির</h5>
+            <p class="card-text">চলতি মাসে ঢাকায় নতুন রক্তদাতা নিবন্ধন শিবিরের আয়োজন করা হয়েছে।</p>
+            <a href="#" class="btn btn-danger btn-sm">আরো পড়ুন</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="card shadow-sm">
+          <img src="asset/news3.jpg" class="card-img-top" alt="সংবাদ ৩">
+          <div class="card-body">
+            <h5 class="card-title">রক্তের জরুরী প্রয়োজন</h5>
+            <p class="card-text">রাজশাহীতে জরুরী রক্তের প্রয়োজন। আপনাদের সাহায্য কামনা করছি।</p>
+            <a href="#" class="btn btn-danger btn-sm">আরো পড়ুন</a>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-3">
-    <p class="mb-0">© 2025 BloodConnect</p>
-  </footer>
+<!-- FAQs Section -->
+<section class="py-5 bg-white">
+  <div class="container">
+    <h2 class="section-title">প্রশ্নোত্তর</h2>
+    <div class="accordion" id="faqAccordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq1">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqAns1" aria-expanded="true">
+            কে রক্ত দিতে পারেন?
+          </button>
+        </h2>
+        <div id="faqAns1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            ১৮ বছর বয়সী, ৫০ কেজি ওজনের উপরে সুস্থ ব্যক্তিরা রক্ত দিতে পারেন।
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq2">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqAns2">
+            রক্তদান কি নিরাপদ?
+          </button>
+        </h2>
+        <div id="faqAns2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            হ্যাঁ, রক্তদান সম্পূর্ণ নিরাপদ কারণ প্রতিবার নতুন এবং জীবাণুমুক্ত যন্ত্রপাতি ব্যবহার করা হয়।
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq3">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqAns3">
+            রক্তদান কতবার করা যায়?
+          </button>
+        </h2>
+        <div id="faqAns3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            সাধারণত, পুরুষরা প্রতি ৩ মাস অন্তর এবং নারী ৪-৬ মাস অন্তর রক্ত দিতে পারেন।
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container text-center">
+    <p class="mb-0">© ২০২৫ জীবনরেখা | একটি মানবিক প্রয়াস</p>
+    <p><small>যোগাযোগ: info@jibonrekha.com | +৮৮০-১২৩৪৫৬৭৮৯০</small></p>
+  </div>
+</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
 </body>
 </html>
